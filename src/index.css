@@ -13,12 +13,29 @@
   --color-secondary: #03373D;
 }
 
-
-
-
-.body{
- 
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --premium-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
+
+body {
+  font-family: "Urbanist", sans-serif;
+  @apply bg-white text-[#03373D] antialiased transition-colors duration-300;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--premium-shadow);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#03373D] to-[#CAEB66];
+}
+
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
