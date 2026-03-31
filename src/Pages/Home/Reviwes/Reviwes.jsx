@@ -5,15 +5,16 @@ import Reviewcard from './Reviewcard';
 
 const Reviwes = ({ reviewspromise }) => {
     const reviews = use(reviewspromise)
-    console.log(reviews)
 
     return (
-        <div className='my-24'>
-            <div className='text-center mb-24'>
-                <h3 className="text-3xl text-center font-bold my-8">Review</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum facilis perspiciatis sed suscipit nostrum ab dicta quas, illum libero expedita consequuntur earum ipsum atque laborum. Molestias nostrum autem nesciunt consectetur.</p>
-
-
+        <div className='py-24 md:py-32 bg-gray-50/30 rounded-[4rem] my-24'>
+            <div className='text-center max-w-3xl mx-auto mb-20 px-6' data-aos="fade-up">
+                <h3 className="text-4xl md:text-6xl font-bold mb-8 text-secondary">
+                    Voice of <span className="text-primary italic">Our Customers</span>
+                </h3>
+                <p className="text-gray-500 text-lg md:text-xl leading-relaxed">
+                    Don't just take our word for it. Join thousands of satisfied businesses and individuals who rely on Zapshift for their logistics needs.
+                </p>
             </div>
 
             <Swiper
@@ -21,33 +22,37 @@ const Reviwes = ({ reviewspromise }) => {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={3}
+                slidesPerView={1}
+                breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                }}
                 coverflowEffect={{
-                    rotate: 30,
-                    stretch: "50%",
-                    depth: 200,
-                    scale: 0.75,
-                    modifier: 1,
-                    slideShadows: true,
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                    slideShadows: false,
                 }}
                 autoplay={{
-                    delay: 2000,
+                    delay: 3000,
                     disableOnInteraction: false,
                 }}
-                pagination={true}
-                modules={[EffectCoverflow, Pagination,Autoplay]}
-                className="mySwiper"
+                pagination={{ clickable: true }}
+                modules={[EffectCoverflow, Pagination, Autoplay]}
+                className="reviews-swiper pb-20 px-6"
             >
                 {
-                    reviews.map(review => <SwiperSlide key={review.id}>
-                        <Reviewcard review={review}></Reviewcard>
-                    </SwiperSlide>)
+                    reviews.map(review => (
+                        <SwiperSlide key={review.id} className="pb-12">
+                            <Reviewcard review={review}></Reviewcard>
+                        </SwiperSlide>
+                    ))
                 }
-
             </Swiper>
-
         </div>
     );
 };
+
 
 export default Reviwes;

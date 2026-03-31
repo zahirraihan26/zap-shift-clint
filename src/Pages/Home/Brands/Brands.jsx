@@ -14,27 +14,41 @@ const brandsLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, sta
 
 const Brands = () => {
     return (
-        <Swiper
-            loop={true}
-            slidesPerView={4}
-            centeredSlides={true}
-            spaceBetween={30}
-            grabCursor={true}
-            modules={[Autoplay]}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-        >
-
-            {
-                brandsLogos.map((logo, index) => <SwiperSlide key={index}><img src={logo} alt="" /></SwiperSlide>)
-            }
-
-
-
-        </Swiper>
+        <div className="py-20">
+            <div className="text-center mb-12">
+                <p className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-2">Trusted by Global Leaders</p>
+                <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <Swiper
+                loop={true}
+                slidesPerView={2}
+                breakpoints={{
+                    640: { slidesPerView: 3 },
+                    1024: { slidesPerView: 5 },
+                }}
+                centeredSlides={true}
+                spaceBetween={50}
+                grabCursor={true}
+                modules={[Autoplay]}
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }}
+                className="brands-swiper"
+            >
+                {brandsLogos.map((logo, index) => (
+                    <SwiperSlide key={index} className="flex items-center justify-center py-10 px-4">
+                        <img 
+                            src={logo} 
+                            alt={`brand-${index}`} 
+                            className="h-12 md:h-16 w-auto object-contain transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-pointer" 
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     );
 };
+
 
 export default Brands;
