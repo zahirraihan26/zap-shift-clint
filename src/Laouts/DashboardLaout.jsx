@@ -3,6 +3,8 @@ import { Outlet, NavLink } from 'react-router'; /* Using react-router version 7 
 import { FiHome, FiMenu, FiX, FiPackage } from 'react-icons/fi';
 import { FaMotorcycle } from 'react-icons/fa';
 
+import DashboardHeader from './DashboardHeader';
+
 const DashboardLaout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -75,6 +77,9 @@ const DashboardLaout = () => {
 
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col w-0 overflow-hidden relative">
+                {/* Dashboard Header */}
+                <DashboardHeader />
+                
                 {/* Decorative background blobs for glassmorphism main canvas effect */}
                 <div className="absolute top-[-10%] sm:left-[-10%] w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
                 <div className="absolute top-[-10%] sm:right-[-10%] w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
