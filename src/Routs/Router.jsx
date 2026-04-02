@@ -8,6 +8,7 @@ import Register from "../Pages/Auth/Register/Register";
 import Privaterouts from "./Privaterouts";
 import Rider from "../Pages/Rader/Rider";
 import Sendpercel from "../Pages/SendPercel/Sendpercel";
+import DashboardLaout from "../Laouts/DashboardLaout";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,16 @@ export const router = createBrowserRouter([
             Component:Home
         },
         {
+            path:'coverage',
+            Component:Coverage,
+            loader:()=> fetch('/serviescenter.json').then(res=>res.json())
+        }
+    ]
+  },
+  {
+    element: <DashboardLaout />,
+    children: [
+        {
            path:'rider',
            element:<Privaterouts> <Rider></Rider> </Privaterouts>
         } ,
@@ -26,11 +37,6 @@ export const router = createBrowserRouter([
           path:'send-percel',
           element:<Privaterouts><Sendpercel></Sendpercel></Privaterouts>,
           loader:()=> fetch('/serviescenter.json').then(res=>res.json())
-        },
-        {
-            path:'coverage',
-            Component:Coverage,
-            loader:()=> fetch('/serviescenter.json').then(res=>res.json())
         }
     ]
   },
