@@ -35,9 +35,9 @@ const Banner = () => {
                                 <p className="text-gray-200 text-lg md:text-xl mb-8 leading-relaxed">
                                     {banner.subtitle}
                                 </p>
-                                <div className="flex gap-4">
-                                    <button className="btn btn-primary px-8 hover-lift">Get Started</button>
-                                    <button className="btn btn-outline border-white text-white hover:bg-white hover:text-secondary px-8 hover-lift">Learn More</button>
+                                <div className="flex gap-4 mt-8 flex-wrap">
+                                    <button className="btn btn-primary px-8 rounded-full shadow-lg shadow-primary/20 hover-lift text-secondary font-bold text-lg border-none hover:bg-[#b0d14b]">Get Started</button>
+                                    <button className="btn btn-outline rounded-full border-white/50 text-white hover:bg-white hover:text-secondary px-8 hover-lift font-bold text-lg backdrop-blur-sm">Learn More</button>
                                 </div>
                             </div>
                         </div>

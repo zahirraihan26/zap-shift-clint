@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider } from "react-router/dom";
 import './index.css'
 import App from './App.jsx'
-import { router } from './Routs/Router.jsx';
+import { router } from './Routes/Router.jsx';
 import AuthProvider from './Context/Authcontext/AuthProvider.jsx';
 // import AuthProvider from './Context/Authcontext/AuthProvider.jsx';
 

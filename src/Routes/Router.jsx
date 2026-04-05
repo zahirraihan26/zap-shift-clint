@@ -1,19 +1,19 @@
 import { createBrowserRouter } from "react-router";
-import RootLaout from "../Laouts/RootLaout";
+import RootLayout from "../Layouts/RootLayout";
 import Home from "../Pages/Home/Home/Home";
 import Coverage from "../Pages/Coverage/Coverage";
-import AuthLaout from "../Laouts/AuthLaout";
+import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Auth/Login/Login";
 import Register from "../Pages/Auth/Register/Register";
-import Privaterouts from "./Privaterouts";
+import PrivateRoutes from "./PrivateRoutes";
 import Rider from "../Pages/Rader/Rider";
 import Sendpercel from "../Pages/SendPercel/Sendpercel";
-import DashboardLaout from "../Laouts/DashboardLaout";
+import DashboardLayout from "../Layouts/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component:RootLaout,
+    Component:RootLayout,
     children:[
         {
             index:true,
@@ -27,22 +27,22 @@ export const router = createBrowserRouter([
     ]
   },
   {
-    element: <DashboardLaout />,
+    element: <DashboardLayout />,
     children: [
         {
            path:'rider',
-           element:<Privaterouts> <Rider></Rider> </Privaterouts>
+           element:<PrivateRoutes> <Rider></Rider> </PrivateRoutes>
         } ,
         {
           path:'send-percel',
-          element:<Privaterouts><Sendpercel></Sendpercel></Privaterouts>,
+          element:<PrivateRoutes><Sendpercel></Sendpercel></PrivateRoutes>,
           loader:()=> fetch('/serviescenter.json').then(res=>res.json())
         }
     ]
   },
   {
     path:'/',
-    Component : AuthLaout,
+    Component : AuthLayout,
     children:[
       {
         path:'login',

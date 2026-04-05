@@ -5,7 +5,7 @@ import { FaMotorcycle } from 'react-icons/fa';
 
 import DashboardHeader from './DashboardHeader';
 
-const DashboardLaout = () => {
+const DashboardLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
@@ -95,4 +95,4 @@ const DashboardLaout = () => {
     );
 };
 
-export default DashboardLaout;
+export default DashboardLayout;

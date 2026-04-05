@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 
-const RootLaout = () => {
+const RootLayout = () => {
     return (
         <div className='max-w-7xl mx-auto'> 
             <Navbar></Navbar>
@@ -13,4 +13,4 @@ const RootLaout = () => {
     );
 };
 
-export default RootLaout;
+export default RootLayout;

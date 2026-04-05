@@ -3,7 +3,7 @@ import Logo from '../Components/Logo/Logo';
 import { Outlet } from 'react-router';
 import authImage from "../assets/authImage.png"
 
-const AuthLaout = () => {
+const AuthLayout = () => {
     return (
         <div className='max-w-7xl mx-auto'>
              <Logo></Logo>
@@ -19,4 +19,4 @@ const AuthLaout = () => {
     );
 };
 
-export default AuthLaout;
+export default AuthLayout;
